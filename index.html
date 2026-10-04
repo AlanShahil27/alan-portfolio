@@ -1320,6 +1320,51 @@ button,a{touch-action:manipulation}
   .project-modal-card{border-radius:18px!important}
 }
 </style>
+
+<style id="mobile-final-fix">
+/* Final mobile overflow/layout fix */
+html, body { width:100%; max-width:100%; overflow-x:hidden !important; }
+@media (max-width: 600px) {
+  .container { width:calc(100% - 28px) !important; max-width:100% !important; }
+  .hero { width:100% !important; min-width:0 !important; overflow:visible !important; }
+  .hero-copy, .hero-card, .profile-placeholder, .hero-text { min-width:0 !important; max-width:100% !important; }
+  .hero-text { overflow-wrap:anywhere !important; word-break:normal !important; }
+  .hero-actions {
+    width:100% !important;
+    max-width:100% !important;
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap:10px !important;
+  }
+  .hero-actions .btn {
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:12px 12px !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+  .hero-actions .btn-primary { grid-column:1 / -1 !important; }
+  .hero-card {
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    aspect-ratio: 0.92 !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+  .profile-placeholder { inset:8% !important; border-radius:22px !important; }
+  .profile-placeholder img { width:100% !important; height:100% !important; max-width:100% !important; object-fit:cover !important; }
+  .section, .section-soft, .contact { max-width:100% !important; overflow:hidden !important; }
+  .project { grid-template-columns:32px minmax(0,1fr) 22px !important; gap:12px !important; }
+  .project-info, .project-info h3, .project-info p { min-width:0 !important; max-width:100% !important; overflow-wrap:anywhere !important; }
+}
+</style>
+
 </head>
 <body>
   <header class="nav-wrap">
